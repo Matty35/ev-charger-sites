@@ -649,22 +649,22 @@ section {
   width: 100%;
   padding: 14px 16px;
   border-radius: var(--radius);
-  border: 2px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.08);
-  color: var(--white);
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--text-dark);
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   margin-bottom: 24px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%2300E676'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%231565C0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
 }
 
 .vehicle-selector select option {
-  background: var(--primary-dark);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text-dark);
 }
 
 .charger-recommendation {
@@ -1747,4 +1747,183 @@ input[type="range"] {
   margin: 0;
   color: var(--text-dark);
   font-weight: 600;
+}
+
+/* ============================================
+   BTN-ACCENT — green primary CTA button
+============================================ */
+.btn-accent {
+  background: var(--accent-green);
+  color: var(--primary-dark);
+}
+
+.btn-accent:hover {
+  transform: scale(1.03);
+  filter: brightness(1.08);
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+/* ============================================
+   TEXT-LIGHT — white text on dark backgrounds
+============================================ */
+.text-light {
+  color: var(--white) !important;
+}
+
+/* ============================================
+   SECTION-TITLE / SECTION-SUB
+============================================ */
+.section-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+/* ============================================
+   STEP CARDS — process section on dark bg
+============================================ */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.step-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+}
+
+.step-card h3 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  color: rgba(255,255,255,0.8);
+}
+
+.step-card a {
+  color: var(--accent-green);
+}
+
+.step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  color: var(--primary-dark);
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FORM ELEMENTS ON LIGHT BACKGROUNDS
+   (.selector-form, .calc-field, .charge-form)
+============================================ */
+.selector-form label,
+.calc-field label,
+.charge-form label {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.selector-form select,
+.calc-field select,
+.charge-form select,
+.charge-form input[type="number"],
+.calc-field input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--white);
+  margin-bottom: 16px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%231565C0'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.charge-form input[type="number"],
+.calc-field input[type="number"] {
+  background-image: none;
+}
+
+.selector-form select:focus,
+.calc-field select:focus,
+.calc-field input:focus,
+.charge-form select:focus,
+.charge-form input:focus {
+  outline: none;
+  border-color: var(--electric-blue);
+}
+
+.selector-tool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.selector-result,
+.result-placeholder {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.calculator-wrapper,
+.charge-calc-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.calc-result,
+.charge-result {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .selector-tool,
+  .calculator-wrapper,
+  .charge-calc-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
